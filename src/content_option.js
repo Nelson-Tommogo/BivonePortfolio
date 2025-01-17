@@ -5,7 +5,7 @@ const meta = {
 };
 
 const introdata = {
-    title: "I’m Bivon Rapolo",
+    title: "I’m Bivone Rapolo",
     animated: {
         first: "I love Marketing",
         second: "I Love Project management",
@@ -18,7 +18,7 @@ const introdata = {
 
 const dataabout = {
     title: "About Me",
-    aboutme: "Hi, I’m Bivon Rapolo, a dedicated virtual assistant passionate about helping individuals and businesses thrive. I specialize in email marketing and project management, ensuring that your brand's voice resonates with your audience.",
+    aboutme: "Hi, I’m Bivone Rapolo, a dedicated virtual assistant passionate about helping individuals and businesses thrive. I specialize in email marketing and project management, ensuring that your brand's voice resonates with your audience.",
 };
 const worktimeline = [
     {
