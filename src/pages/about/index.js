@@ -9,6 +9,7 @@ import {
   skills,
   services,
 } from "../../content_option";
+import Testimonial from "../../components/Testimonial";
 
 export const About = () => {
   return (
@@ -95,6 +96,8 @@ export const About = () => {
           </Col>
         </Row>
       </Container>
+      {/* Footer Section */}
+      <Testimonial />
     </HelmetProvider>
   );
 };
