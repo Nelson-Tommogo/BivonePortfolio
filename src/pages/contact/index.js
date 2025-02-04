@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import * as emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { meta } from "../../content_option";
@@ -17,51 +16,20 @@ export const ContactUs = () => {
     variant: "",
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setFormdata({ loading: true });
-
-    const templateParams = {
-      from_name: formData.email,
-      user_name: formData.name,
-      to_name: contactConfig.YOUR_EMAIL,
-      message: formData.message,
-    };
-
-    emailjs
-      .send(
-        contactConfig.YOUR_SERVICE_ID,
-        contactConfig.YOUR_TEMPLATE_ID,
-        templateParams,
-        contactConfig.YOUR_USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setFormdata({
-            loading: false,
-            alertmessage: "SUCCESS! Thank you for your message.",
-            variant: "success",
-            show: true,
-          });
-        },
-        (error) => {
-          console.log(error.text);
-          setFormdata({
-            alertmessage: `Failed to send! ${error.text}`,
-            variant: "danger",
-            show: true,
-          });
-          document.getElementsByClassName("co_alert")[0].scrollIntoView();
-        }
-      );
-  };
-
   const handleChange = (e) => {
     setFormdata({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSendEmail = () => {
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all fields before sending.");
+      return;
+    }
+    const mailtoLink = `mailto:rapolobivone124@gmail.com?from=${formData.email}&subject=Message from ${formData.name}&body=${encodeURIComponent(formData.message)}`;
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -111,7 +79,7 @@ export const ContactUs = () => {
             <p>{contactConfig.description}</p>
           </Col>
           <Col lg="7" className="d-flex align-items-center">
-            <form onSubmit={handleSubmit} className="contact__form w-100">
+            <form className="contact__form w-100">
               <Row>
                 <Col lg="6" className="form-group">
                   <input
@@ -151,8 +119,8 @@ export const ContactUs = () => {
               <br />
               <Row>
                 <Col lg="12" className="form-group">
-                  <button className="btn ac_btn" type="submit">
-                    {formData.loading ? "Sending..." : "Send"}
+                  <button className="btn ac_btn" type="button" onClick={handleSendEmail}>
+                    Send
                   </button>
                 </Col>
               </Row>
