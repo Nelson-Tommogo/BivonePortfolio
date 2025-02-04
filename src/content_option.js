@@ -132,17 +132,17 @@ const dataportfolio = [
     {
         img: Copywriting,
         description: "Crafted compelling email copy for Mebiut, resulting in improved open and click-through rates.",
-        link: "https://dummy-link2.com",
+        link: "",
     },
     {
         img: projectManagementImage,
         description: "Managed multiple projects at Kilonzocorp simultaneously, ensuring timely delivery and coordination among team members.",
-        link: "https://dummy-link3.com",
+        link: "",
     },
     {
         img: executiveAssistantImage,
         description: "Performed general executive assistant duties for various clients, including scheduling, organizing meetings, and managing communications.",
-        link: "https://dummy-link4.com",
+        link: "",
     },
 ];
 
