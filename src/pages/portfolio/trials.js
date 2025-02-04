@@ -18,7 +18,7 @@ const introdata = {
         third: "I love Creating slides/presentations, meeting agendas, travel itineraries",
     },
     description: "Hi, I’m Bivone Rapolo, a dedicated virtual assistant passionate about helping individuals and businesses thrive. By working with me, you’ll gain a reliable partner committed to your success.",
-    your_img_url: reactPortfolioImage,
+    your_img_url: reactPortfolioImage, // Use the imported image
 };
 
 const dataabout = {
